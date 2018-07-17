@@ -9,6 +9,8 @@ import {MatCardModule, MatButtonModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     AuthRoutingModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, SignUpComponent, ForgotPasswordComponent]
 })
 export class AuthModule { }

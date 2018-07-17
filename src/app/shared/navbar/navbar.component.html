@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">  
+<mat-toolbar color="" class="mat-elevation-z6">  
   <mat-toolbar-row>
       <span>
         <a mat-button>
@@ -16,8 +16,10 @@
     
       <span>
           <a [routerLink]="['/auth/login']" mat-button>
-              <mat-icon>person_outline</mat-icon>
               Login
+          </a>
+          <a [routerLink]="['/auth/sign-up']" mat-flat-button>
+            Sign Up
           </a>
       </span>
   </mat-toolbar-row>
