@@ -10,7 +10,7 @@
     ]
   },
   "hosting": {
-    "public": "dist/spark",
+    "public": "dist/flint",
     "ignore": [
       "firebase.json",
       "**/.*",

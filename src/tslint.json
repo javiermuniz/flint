@@ -4,13 +4,13 @@
         "directive-selector": [
             true,
             "attribute",
-            "spark",
+            "flint",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "spark",
+            "flint",
             "kebab-case"
         ]
     }

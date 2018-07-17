@@ -5,7 +5,7 @@ import { AngularFireFunctions } from 'angularfire2/functions';
 
 
 @Component({
-  selector: 'spark-login',
+  selector: 'flint-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

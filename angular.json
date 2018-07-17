@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spark": {
+    "flint": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "spark",
+      "prefix": "flint",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/spark",
+            "outputPath": "dist/flint",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -52,18 +52,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spark:build"
+            "browserTarget": "flint:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spark:build:production"
+              "browserTarget": "flint:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spark:build"
+            "browserTarget": "flint:build"
           }
         },
         "test": {
@@ -98,7 +98,7 @@
         }
       }
     },
-    "spark-e2e": {
+    "flint-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -106,11 +106,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "spark:serve"
+            "devServerTarget": "flint:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "spark:serve:production"
+              "devServerTarget": "flint:serve:production"
             }
           }
         },
@@ -126,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "spark"
+  "defaultProject": "flint"
 }

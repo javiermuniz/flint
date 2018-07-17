@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('spark-root h1')).getText();
+    return element(by.css('flint-root h1')).getText();
   }
 }
