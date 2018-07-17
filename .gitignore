@@ -44,3 +44,4 @@ Thumbs.db
 
 # Things that don't belong in the boilerplate
 /src/environments
+.firebaserc
