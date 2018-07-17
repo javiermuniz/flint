@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">  
+  <mat-toolbar-row>
+      <span>
+        <a mat-button>
+          <mat-icon>offline_bolt</mat-icon>
+          SparkBackup
+        </a>
+        <span *ngIf="user | async">
+            <a mat-button>Projects</a>
+            <a mat-button>Users</a>
+        </span>
+      </span>
+
+      <!-- This fills the remaining space of the current row -->
+      <span class="navbar-center"></span>
+    
+      <span>
+          <a [routerLink]="['/auth/login']" mat-button>
+              <mat-icon>person_outline</mat-icon>
+              Login
+          </a>
+      </span>
+  </mat-toolbar-row>
+</mat-toolbar>
