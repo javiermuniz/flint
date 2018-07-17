@@ -16,7 +16,7 @@ git init
 git remote add flint git@github.com:javiermuniz/flint.git
 git pull flint master
 git remote add origin <your git path>
-git push origin master
+ git push --set-upstream origin master
 ```
 
 From this point forward, you can develop as you usually would. If you wish to update Flint, simply pull master from your flint remote and resolve any merge conflicts. I will do my best to organize the codebase in such a way that merge conflicts are easy to avoid, but some may be unavoidable. I still believe that overall, this approach will yield better results for the boilerplate than to release as an npm module.
