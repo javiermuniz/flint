@@ -1,5 +1,6 @@
 <div fxLayout fxLayoutAlign="center center">
-  <mat-card>
+  <div fxFlex></div>
+  <mat-card fxFlex>
     <mat-card-title>
         Sign Up
     </mat-card-title>
@@ -14,19 +15,24 @@
               <input matInput type="password" placeholder="Password" [formControl]="form.controls['password']">
             </mat-form-field>
             <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">Password is required.</small>
+            <mat-form-field style="width: 100%">
+              <input matInput style="visibility: hidden;">
+              <div id="card-info" class="form-control" #cardInfo></div>
+            </mat-form-field>
+            <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">Password is required.</small>
           <button mat-raised-button color="primary" type="submit">Sign Up</button>
         </div>
       </form>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions fxLayout>
         <div fxFlex>
             <a [routerLink]="['/auth/forgot-password']" mat-button>Forgot password?</a>
         </div>
         <div fxFlex></div>
         <div fxFlex>
-
             <a [routerLink]="['/auth/login']" mat-button>Login</a>
         </div>
     </mat-card-actions>
-    </mat-card>
+  </mat-card>
+  <div fxFlex></div>
 </div>
