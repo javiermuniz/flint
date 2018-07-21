@@ -19,9 +19,10 @@
       <span class="navbar-center"></span>
     
       <span *ngIf="auth.user | async; else notAuthenticatedRight">
-        <button (click)="logout()" mat-button>
-            Logout
+        <button mat-icon-button color="primary" [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
         </button>
+        
       </span>
       <ng-template #notAuthenticatedRight>
         <a [routerLink]="['/auth/login']" mat-button>
@@ -33,3 +34,10 @@
       </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<mat-menu #appMenu="matMenu" yPosition="below">
+    <button mat-menu-item>Profile</button>
+    <button (click)="logout()" mat-menu-item>Logout</button>
+</mat-menu>
+      
+      

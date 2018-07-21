@@ -17,6 +17,7 @@ import { AngularFireFunctionsModule } from 'angularfire2/functions';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule,
     AngularFireAuthModule,

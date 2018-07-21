@@ -7,3 +7,8 @@
 .mat-toolbar {
   margin-bottom: 40px;
 }
+
+.mat-menu-panel {
+  margin-top: 50px;
+  min-width: 280px !important;
+}
