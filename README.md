@@ -4,7 +4,9 @@ A rapid development boilerplate for launching a simple SaaS site using:
 
 * Angular 6+ w/PWA
 * Material UI using Angular Material
-* Firebase Authentication & Firestore
+* Firebase Authentication
+* Firestore for database
+* Firebase Functions for backend
 * Stripe Billing & Subscriptions
 
 ## Features
