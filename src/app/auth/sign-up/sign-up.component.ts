@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, Cha
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StripeService } from '../../services/stripe.service';
+import { PricingService } from '../../services/pricing.service';
 
 @Component({
   selector: 'flint-sign-up',
@@ -16,11 +17,13 @@ export class SignUpComponent implements OnInit, OnDestroy, AfterViewInit {
   public card: any;
   public cardHandler = this.onChange.bind(this);
   public cardError: string = null;
+  public plan: string;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
               private cd: ChangeDetectorRef,
               private stripe: StripeService,
+              public pricing: PricingService,
               private router: Router) {
       this.form = this.fb.group({
           email: [null, Validators.compose( [ Validators.required] )],

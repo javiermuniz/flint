@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
 
 export interface Plan {
+  id: string;
   name: string;
   price: number;
   features: Array<string>;
 }
 
+@Injectable({
+  providedIn: 'root'
+})
+
 export class PricingService {
 
   public plans: Plan[] = [
     {
+      id: 'free',
       name: "Free",
       price: 0,
       features: [
@@ -23,7 +26,8 @@ export class PricingService {
       ]
     },
     {
-      name: "Indie",
+      id: 'basic',
+      name: "Basic",
       price: 5,
       features: [
         'feature4',
@@ -32,7 +36,8 @@ export class PricingService {
       ]
     },
     {
-      name: "Hacker",
+      id: 'pro',
+      name: "Professional",
       price: 10,
       features: [
         'feature7',

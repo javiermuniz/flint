@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'flint-forgot-password',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder,
+              private authService: AuthService,
+              private router: Router) {
+
+      this.form = this.fb.group({
+          email:  [null , Validators.compose ( [ Validators.required ] )],
+      });
+  }
+
+  public async sendPasswordReset() {
+    this.authService.resetPassword(this.form.value.email);
+  }
+
+  // tslint:disable-next-line:no-empty
+  public ngOnInit() {
+      
   }
 
 }

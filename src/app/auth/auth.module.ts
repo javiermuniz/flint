@@ -5,7 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import {MatCardModule, MatButtonModule} from '@angular/material';
+import {MatCardModule, MatButtonModule,  MatSelectModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
     FlexLayoutModule,
     AuthRoutingModule
   ],
