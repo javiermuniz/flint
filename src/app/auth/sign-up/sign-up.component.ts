@@ -70,13 +70,14 @@ export class SignUpComponent implements OnInit, OnDestroy, AfterViewInit {
       // render validation error
     }
     try {
+      const plan = this.plan;
       await this.auth.signUp({
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
         password: user.password,
         stripeToken: token,
-        plan: this.plan
+        plan: plan
       });
     } catch(error) {
       console.log(error);

@@ -38,7 +38,8 @@ export class AuthService {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      stripeToken: user.stripeToken
+      stripeToken: user.stripeToken,
+      plan: user.plan
     });
   }
 
