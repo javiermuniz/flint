@@ -5,21 +5,25 @@
           <mat-icon>offline_bolt</mat-icon>
           Flint
         </a>
-        <span *ngIf="user | async">
-            <a mat-button>Projects</a>
-            <a mat-button>Users</a>
+        <span *ngIf="auth.user | async; else notAuthenticatedLeft">
+            <a mat-button>Dashboard</a>
         </span>
+        <ng-template #notAuthenticatedLeft>
+            <a mat-button [routerLink]="['/pricing']">
+                Pricing
+            </a>
+        </ng-template>
       </span>
 
       <!-- This fills the remaining space of the current row -->
       <span class="navbar-center"></span>
     
-      <span *ngIf="auth.user | async as user; else notAuthenticated">
+      <span *ngIf="auth.user | async; else notAuthenticatedRight">
         <button (click)="logout()" mat-button>
             Logout
         </button>
       </span>
-      <ng-template #notAuthenticated>
+      <ng-template #notAuthenticatedRight>
         <a [routerLink]="['/auth/login']" mat-button>
             Login
         </a>
