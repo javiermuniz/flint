@@ -25,7 +25,7 @@
             <mat-form-field>
                 <mat-select placeholder="Select a Plan" [(value)]="plan">
                   <mat-option *ngFor="let plan of pricing.plans" [value]="plan.id">
-                    {{plan.name}}
+                    {{plan.name}} - ${{plan.price}}/month
                   </mat-option>
                 </mat-select>
               </mat-form-field>
