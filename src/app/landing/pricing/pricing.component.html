@@ -1,3 +1,15 @@
-<p>
-  pricing works!
-</p>
+<div fxLayout="row" fxLayoutGap="20px">
+  <div fxFlex></div>
+  <mat-card fxFlex *ngFor="let plan of pricing.plans">
+    <mat-card-title>{{ plan.name }}</mat-card-title>
+    <mat-card-subtitle>${{plan.price}}/month</mat-card-subtitle>
+    <mat-card-content>
+      <ul>
+        <li *ngFor="let feature of plan.features">
+          {{feature}}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+  <div fxFlex></div>
+</div>
