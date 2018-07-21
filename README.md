@@ -7,6 +7,18 @@ A rapid development boilerplate for launching a simple SaaS site using:
 * Firebase Authentication & Firestore
 * Stripe Billing & Subscriptions
 
+## Features
+
+* Sign up/Sign in/Forgot Password workflow
+* Stripe payments using Stripe Billing Subscriptions
+
+## Roadmap
+
+* User profile management (including card management)
+* Automated account suspension on declined cards
+* Emails via Sendgrid API
+* Organization support w/scalable role based permissions
+
 ## Getting started
 
 ### Step 1 - Clone from flint
