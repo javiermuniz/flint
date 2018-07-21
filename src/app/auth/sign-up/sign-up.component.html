@@ -5,7 +5,7 @@
         Sign Up
     </mat-card-title>
     <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="login()">
+      <form [formGroup]="form" (ngSubmit)="signUp()">
         <div fxLayout="column" fxLayoutAlign="space-around">
             <mat-form-field style="width: 100%">
               <input matInput placeholder="Email" [formControl]="form.controls['email']">

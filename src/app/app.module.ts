@@ -15,7 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AngularFireFunctionsModule } from 'angularfire2/functions';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireFunctionsModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

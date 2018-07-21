@@ -14,13 +14,18 @@
       <!-- This fills the remaining space of the current row -->
       <span class="navbar-center"></span>
     
-      <span>
-          <a [routerLink]="['/auth/login']" mat-button>
-              Login
-          </a>
-          <a [routerLink]="['/auth/sign-up']" mat-flat-button>
-            Sign Up
-          </a>
+      <span *ngIf="auth.user | async as user; else notAuthenticated">
+        <button (click)="logout()" mat-button>
+            Logout
+        </button>
       </span>
+      <ng-template #notAuthenticated>
+        <a [routerLink]="['/auth/login']" mat-button>
+            Login
+        </a>
+        <a [routerLink]="['/auth/sign-up']" mat-flat-button>
+            Sign Up
+        </a>  
+      </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>

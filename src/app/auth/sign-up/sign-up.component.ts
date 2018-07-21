@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StripeService } from '../../services/stripe.service';
 import { PricingService } from '../../services/pricing.service';
+import { IUser, AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'flint-sign-up',
@@ -23,11 +24,14 @@ export class SignUpComponent implements OnInit, OnDestroy, AfterViewInit {
               private route: ActivatedRoute,
               private cd: ChangeDetectorRef,
               private stripe: StripeService,
+              private auth: AuthService,
               public pricing: PricingService,
               private router: Router) {
       this.form = this.fb.group({
           email: [null, Validators.compose( [ Validators.required] )],
           password: [null, Validators.compose( [ Validators.required] )],
+          firstName: [null, Validators.compose( [ Validators.required ])],
+          lastName: [null, Validators.compose( [ Validators.required ])]
       });
   }
 
@@ -57,5 +61,26 @@ export class SignUpComponent implements OnInit, OnDestroy, AfterViewInit {
       this.cardError = null;
     }
     this.cd.detectChanges();
+  }
+
+  async signUp() {
+    const user = this.form.value;
+    const { token, error } = await this.stripe.client.createToken(this.card);
+    if(error) {
+      // render validation error
+    }
+    try {
+      await this.auth.signUp({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        password: user.password,
+        stripeToken: token,
+      });
+    } catch(error) {
+      console.log(error);
+      // render creation error
+    }
+    this.router.navigate(['/']);
   }
 }
