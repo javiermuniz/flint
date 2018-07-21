@@ -4,6 +4,9 @@
     <mat-card-title>
         Sign In
     </mat-card-title>
+    <mat-card-subtitle *ngIf="error" class="text-error">
+      {{ error }}
+    </mat-card-subtitle>
     <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="login()">
         <div fxLayout="column" fxLayoutAlign="space-around">

@@ -13,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   public form: FormGroup;
+  public error: string;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
@@ -26,11 +27,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.error = null;
   }
 
   public async login() {
-    await this.auth.login(this.form.value.email, this.form.value.password);
-    this.router.navigate(['/']);
+    try {
+      await this.auth.login(this.form.value.email, this.form.value.password);
+      this.router.navigate(['/']);
+    } catch(error) {
+      this.error = error.message;
+    }
   }
 
 }
