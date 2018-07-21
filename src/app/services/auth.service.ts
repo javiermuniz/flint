@@ -13,7 +13,8 @@ export interface IUser {
   password?: string,
   firstName: string,
   lastName: string,
-  stripeToken: any
+  stripeToken: any,
+  plan: string
 }
 
 @Injectable({

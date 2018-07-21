@@ -43,9 +43,10 @@ This is necessary so that the boilerplate can create customers and subscriptions
 
 ### Step 3 - Deploy
 
-Now that you have your environment configured, do:
+Now that you have your environment configured, you can do your first build and deploy by doing:
 
 ```
+ng build --prod
 firebase deploy
 ```
 

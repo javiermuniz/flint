@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StripeService } from '../../services/stripe.service';
 import { PricingService } from '../../services/pricing.service';
-import { IUser, AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'flint-sign-up',
@@ -76,6 +76,7 @@ export class SignUpComponent implements OnInit, OnDestroy, AfterViewInit {
         email: user.email,
         password: user.password,
         stripeToken: token,
+        plan: this.plan
       });
     } catch(error) {
       console.log(error);

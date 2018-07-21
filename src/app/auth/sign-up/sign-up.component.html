@@ -8,6 +8,14 @@
       <form [formGroup]="form" (ngSubmit)="signUp()">
         <div fxLayout="column" fxLayoutAlign="space-around">
             <mat-form-field style="width: 100%">
+              <input matInput placeholder="First Name" [formControl]="form.controls['firstName']">
+            </mat-form-field>
+            <small *ngIf="form.controls['firstName'].hasError('required') && form.controls['firstName'].touched" class="mat-text-warn">First name is required.</small>
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Last Name" [formControl]="form.controls['lastName']">
+            </mat-form-field>
+            <small *ngIf="form.controls['lastName'].hasError('required') && form.controls['lastName'].touched" class="mat-text-warn">Last name is required.</small>
+            <mat-form-field style="width: 100%">
               <input matInput placeholder="Email" [formControl]="form.controls['email']">
             </mat-form-field>
             <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="mat-text-warn">Email is required.</small>
