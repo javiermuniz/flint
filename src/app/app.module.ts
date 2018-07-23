@@ -37,6 +37,7 @@ import { MatMenuModule } from '@angular/material';
     AngularFireFunctionsModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireFunctionsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
